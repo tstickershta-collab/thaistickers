@@ -1,0 +1,14 @@
+# Free preview: no persistent disk, no paid service provisioned.
+services:
+  - type: web
+    name: thaistickers
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: ADMIN_PASSWORD
+        generateValue: true
