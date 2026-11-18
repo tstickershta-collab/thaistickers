@@ -1,0 +1,15 @@
+# Apply to the existing thaistickers service only after reviewing the Render plan.
+services:
+  - type: web
+    name: thaistickers
+    runtime: node
+    repo: https://github.com/tstickershta-collab/thaistickers
+    branch: main
+    region: singapore
+    plan: starter
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
